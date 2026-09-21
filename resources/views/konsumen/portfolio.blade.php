@@ -106,13 +106,11 @@
   <div class="masonry-grid">
     @forelse($portfolioItems as $item)
       <a href="{{ route('produk.detail', $item->slug) }}" class="masonry-item animate-fade-up" style="display: block;">
-        @php
-           $randomHeight = rand(400, 700);
-        @endphp
         @if($item->image)
           <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" class="masonry-img">
         @else
-          <img src="https://source.unsplash.com/random/600x{{ $randomHeight }}?fashion,dress,wedding&sig={{ $item->id }}" alt="{{ $item->name }}" class="masonry-img" style="object-fit: cover;">
+          @php $randomId = ($item->id % 3) + 1; @endphp
+          <img src="{{ asset('images/portfolio/' . $randomId . '.png') }}" alt="{{ $item->name }}" class="masonry-img" style="object-fit: cover;">
         @endif
         
         <div class="masonry-overlay">
@@ -122,10 +120,10 @@
       </a>
     @empty
       {{-- Dummy content if no featured items --}}
-      @for($i = 1; $i <= 9; $i++)
+      @for($i = 1; $i <= 6; $i++)
       <div class="masonry-item animate-fade-up">
-        @php $h = [400, 500, 600, 700][array_rand([400, 500, 600, 700])]; @endphp
-        <img src="https://source.unsplash.com/random/600x{{ $h }}?fashion,couture,gown&sig={{ $i }}" alt="Portfolio {{ $i }}" class="masonry-img">
+        @php $imgId = (($i - 1) % 3) + 1; @endphp
+        <img src="{{ asset('images/portfolio/' . $imgId . '.png') }}" alt="Portfolio {{ $i }}" class="masonry-img">
         <div class="masonry-overlay">
           <h3>Bespoke Gown {{ $i }}</h3>
           <p>Custom Made</p>
