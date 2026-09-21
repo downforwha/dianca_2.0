@@ -13,7 +13,7 @@
 
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;">
+    <div class="kontak-layout">
 
       {{-- ORDER FORM --}}
       <div>
@@ -33,7 +33,7 @@
           <form action="{{ route('kontak.store') }}" method="POST">
             @csrf
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="grid-2" style="gap:16px;">
               <div class="form-group">
                 <label class="form-label">Nama Lengkap *</label>
                 <input type="text" name="customer_name" class="form-control {{ $errors->has('customer_name') ? 'is-invalid' : '' }}"
@@ -69,7 +69,7 @@
               </select>
             </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="grid-2" style="gap:16px;">
               <div class="form-group">
                 <label class="form-label">Ukuran</label>
                 <select name="size" class="form-control" id="sizeSelect">
@@ -174,7 +174,7 @@
           {{-- Social Media --}}
           <div style="margin-top:28px;padding:20px;background:var(--white);border-radius:14px;box-shadow:var(--shadow-sm);">
             <div style="font-weight:700;margin-bottom:14px;font-size:0.9rem;">Ikuti Kami di Sosial Media</div>
-            <div style="display:flex;gap:10px;">
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a href="{{ \App\Models\Setting::get('social_instagram', '#') }}" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:linear-gradient(135deg,#E1306C,#F77737);border-radius:10px;color:#fff;font-size:0.82rem;font-weight:700;">
                 📸 Instagram
               </a>

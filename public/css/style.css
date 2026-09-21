@@ -945,4 +945,11 @@ body { top: 0px !important; }
   .why-us-grid { grid-template-columns: 1fr; }
   .container { padding: 0 var(--space-4); }
   .footer-instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .kontak-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
+
+/* Kontak Layout Base */
+.kontak-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+@media (max-width: 768px) {
+  .kontak-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
 }
