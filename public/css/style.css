@@ -613,7 +613,7 @@ select.form-control {
 .filter-tab:hover, .filter-tab.active {
   background: var(--primary); color: var(--white); border-color: var(--primary);
 }
-.search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 320px; }
+.search-wrap { position: relative; flex: 1; min-width: 140px; max-width: 320px; }
 .search-wrap input { padding-left: 40px; }
 .search-wrap .search-icon {
   position: absolute; left: 14px; top: 50%; transform: translateY(-50%);

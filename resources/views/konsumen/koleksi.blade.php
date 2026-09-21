@@ -26,15 +26,15 @@
           </a>
         @endforeach
       </div>
-      <form id="filter-form" method="GET" action="{{ route('koleksi') }}" style="display:flex;gap:8px;">
+      <form id="filter-form" method="GET" action="{{ route('koleksi') }}" style="display:flex;gap:8px;flex:1;flex-wrap:wrap;justify-content:flex-start;min-width:0;">
         @if($activeCategory)
           <input type="hidden" name="kategori" value="{{ $activeCategory }}">
         @endif
-        <div class="search-wrap">
-          <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari produk..." class="form-control" style="width:220px;">
+        <div class="search-wrap" style="flex: 1 1 140px; min-width: 140px; max-width: 100%;">
+          <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari produk..." class="form-control" style="width:100%;">
           <span class="search-icon">🔍</span>
         </div>
-        <select name="sort" class="form-control" style="width:160px;" onchange="this.form.submit()">
+        <select name="sort" class="form-control" style="flex: 1 1 120px; min-width: 120px; max-width: 100%;" onchange="this.form.submit()">
           <option value="">Urutkan</option>
           <option value="newest" {{ request('sort')=='newest' ? 'selected' : '' }}>Terbaru</option>
           <option value="price_asc" {{ request('sort')=='price_asc' ? 'selected' : '' }}>Harga Terendah</option>

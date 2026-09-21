@@ -165,7 +165,7 @@
               <div style="width:44px;height:44px;background:rgba(255,255,255,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💬</div>
               <div>
                 <div style="font-weight:700;margin-bottom:4px;">WhatsApp</div>
-                <div style="font-size:0.9rem;opacity:0.9;">+{{ \App\Models\Setting::get('butik_wa','6281234567890') }}</div>
+                <div style="font-size:0.9rem;opacity:0.9;">{{ \App\Models\Setting::get('butik_wa_display','+62 895-4330-58138') }}</div>
                 <div style="font-size:0.8rem;opacity:0.7;margin-top:2px;">Klik untuk chat langsung →</div>
               </div>
             </a>
@@ -177,9 +177,6 @@
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a href="{{ \App\Models\Setting::get('social_instagram', '#') }}" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:linear-gradient(135deg,#E1306C,#F77737);border-radius:10px;color:#fff;font-size:0.82rem;font-weight:700;">
                 📸 Instagram
-              </a>
-              <a href="{{ \App\Models\Setting::get('social_facebook', '#') }}" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:#1877F2;border-radius:10px;color:#fff;font-size:0.82rem;font-weight:700;">
-                📘 Facebook
               </a>
               <a href="{{ \App\Models\Setting::get('social_tiktok', '#') }}" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:#000;border-radius:10px;color:#fff;font-size:0.82rem;font-weight:700;">
                 🎵 TikTok
