@@ -960,6 +960,17 @@ body { top: 0px !important; }
 
 /* Kontak Layout Base */
 .kontak-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+.kontak-layout > * { min-width: 0; } /* Prevent grid blowout */
+
+.kontak-form-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 44px;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 4px 20px rgba(212,175,55,0.1);
+}
+
 @media (max-width: 768px) {
   .kontak-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .kontak-form-card { padding: 24px; }
 }

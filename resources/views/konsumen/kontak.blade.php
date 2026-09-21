@@ -17,7 +17,7 @@
 
       {{-- ORDER FORM --}}
       <div>
-        <div style="background:var(--white);border-radius:24px;padding:44px;border:1px solid #D4AF37;box-shadow:0 4px 20px rgba(212,175,55,0.1);">
+        <div class="kontak-form-card">
           <div style="margin-bottom:32px;">
             <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:8px;">Mulai Pesan</span>
             <h2 style="font-size:1.8rem;margin-bottom:8px;">Form Pemesanan</h2>
@@ -153,7 +153,7 @@
               <div style="width:44px;height:44px;background:var(--primary-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">📧</div>
               <div>
                 <div style="font-weight:700;margin-bottom:4px;">Email</div>
-                <a href="mailto:{{ \App\Models\Setting::get('butik_email','') }}" style="color:var(--primary);font-size:0.9rem;">
+                <a href="mailto:{{ \App\Models\Setting::get('butik_email','') }}" style="color:var(--primary);font-size:0.9rem;word-break:break-all;">
                   {{ \App\Models\Setting::get('butik_email','butik.elegan@email.com') }}
                 </a>
               </div>
