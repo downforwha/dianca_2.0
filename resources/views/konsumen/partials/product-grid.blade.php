@@ -6,7 +6,7 @@
     <a href="{{ route('koleksi') }}" class="btn btn-outline" style="margin-top:24px;">Lihat Semua Produk</a>
   </div>
 @else
-  <div class="grid-3" style="grid-template-columns:repeat(3,1fr);">
+  <div class="grid-3">
     @foreach($products as $product)
     <div class="product-card">
       <div class="product-card__img-wrap" style="border: 1px solid #D4AF37; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-radius: var(--radius); overflow: hidden;">

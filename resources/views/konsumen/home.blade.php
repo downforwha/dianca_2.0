@@ -38,7 +38,7 @@
       <h2 style="font-size: 2.25rem; font-weight: 400; letter-spacing: -0.01em;">Kategori Pilihan</h2>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; grid-auto-rows: 280px;">
+    <div class="bento-grid">
       @foreach($categories as $index => $cat)
       @php
         $spanClass = ($index == 0) ? 'grid-column: span 2; grid-row: span 2;' : (($index == 1) ? 'grid-column: span 2;' : 'grid-column: span 1;');
@@ -50,7 +50,7 @@
         ];
         $bg = isset($bgImages[$index]) ? asset('assets/images/redesign/' . $bgImages[$index]) : asset('assets/images/redesign/cat_dress_1789934758453.png');
       @endphp
-      <a href="{{ route('koleksi') }}?kategori={{ $cat->slug }}" class="category-card animate-fade-up" style="{{ $spanClass }} background: url('{{ $bg }}') center/cover no-repeat; padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; border: 1px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
+      <a href="{{ route('koleksi') }}?kategori={{ $cat->slug }}" class="category-card animate-fade-up bento-item" style="{{ $spanClass }} background: url('{{ $bg }}') center/cover no-repeat; padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; border: 1px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3)); z-index: 1;"></div>
         <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
           <div class="name" style="font-size: 2.25rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; color: #9c7717; margin-bottom: 4px; text-shadow: 1px 1px 0px rgba(255,255,255,0.8);">{{ $cat->name }}</div>
@@ -72,7 +72,7 @@
       <a href="{{ route('koleksi') }}" class="btn" style="background: transparent; color: var(--primary); border: 1px solid var(--gray-light); padding: 12px 24px;">Lihat Semua</a>
     </div>
 
-    <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 32px;">
+    <div class="grid-4" style="gap: 40px 32px;">
       @forelse($featured as $index => $product)
       @php
           $prodImages = [
