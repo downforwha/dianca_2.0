@@ -27,6 +27,7 @@
     <div class="navbar-nav">
       <a href="{{ route('home') }}"       class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
       <a href="{{ route('koleksi') }}"    class="{{ request()->routeIs('koleksi') ? 'active' : '' }}">Koleksi</a>
+      <a href="{{ route('portfolio') }}"  class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
       <a href="{{ route('about') }}"      class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
       <a href="{{ route('size-guide') }}" class="{{ request()->routeIs('size-guide') ? 'active' : '' }}">Size Guide</a>
       <a href="{{ route('kontak') }}" class="btn btn-nav">Pesan Sekarang</a>
@@ -108,6 +109,7 @@
         <div class="footer-links">
           <a href="{{ route('home') }}">Home</a>
           <a href="{{ route('koleksi') }}">Koleksi</a>
+          <a href="{{ route('portfolio') }}">Portfolio</a>
           <a href="{{ route('about') }}">About Us</a>
           <a href="{{ route('size-guide') }}">Size Guide</a>
           <a href="{{ route('kontak') }}">Kontak</a>
