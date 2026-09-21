@@ -380,12 +380,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── Admin Buttons ──────────────────────────────── */
 .btn-admin {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 8px 16px; border-radius: var(--radius);
   font-size: 0.82rem; font-weight: 600;
   transition: var(--transition); font-family: 'Inter', sans-serif;
   cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+  min-height: 44px;
 }
+.btn-admin:active { transform: scale(0.98); opacity: 0.9; }
 .btn-admin-primary {
   background: var(--primary); color: #FFFFFF;
   border-color: var(--primary);
@@ -416,10 +418,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-color: var(--border);
 }
 .btn-admin-outline:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-pale); }
-.btn-admin-sm { padding: 5px 12px; font-size: 0.75rem; }
-.btn-admin-lg { padding: 11px 22px; font-size: 0.88rem; }
+.btn-admin-sm { padding: 5px 12px; font-size: 0.75rem; min-height: 36px; }
+.btn-admin-lg { padding: 11px 22px; font-size: 0.88rem; min-height: 48px; }
 .btn-admin-icon {
-  width: 32px; height: 32px; padding: 0;
+  width: 40px; height: 40px; padding: 0;
   border-radius: var(--radius);
   display: inline-flex; align-items: center; justify-content: center;
 }
