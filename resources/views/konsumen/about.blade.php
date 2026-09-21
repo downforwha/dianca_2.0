@@ -29,7 +29,7 @@
         <p style="color:var(--gray);line-height:1.9;margin-bottom:32px;">
           Berawal dari garasi kecil dengan hanya 10 koleksi, kini DIANCA ATELIER telah melayani ribuan pelanggan setia di seluruh Indonesia. Setiap helai kain yang kami pilih, setiap jahitan yang kami kerjakan, adalah bukti dedikasi kami untuk memberikan yang terbaik.
         </p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;">
+        <div class="grid-3" style="margin-bottom:32px;">
           <div style="text-align:center;padding:20px;background:var(--cream);border-radius:12px;border:1px solid #D4AF37;box-shadow: 0 4px 20px rgba(212,175,55,0.1);">
             <div style="font-size:2rem;font-weight:700;color:var(--primary-dark);font-family:'Playfair Display',serif;">500+</div>
             <div style="font-size:0.8rem;color:var(--gray);margin-top:4px;">Koleksi</div>
@@ -113,7 +113,7 @@
       <h2>Informasi Toko</h2>
       <div class="divider-primary"></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+    <div class="grid-3">
       <div style="background:var(--white);border-radius:16px;padding:32px;text-align:center;box-shadow:var(--shadow-sm);">
         <div style="font-size:2.5rem;margin-bottom:16px;">📍</div>
         <h4 style="margin-bottom:10px;">Alamat</h4>

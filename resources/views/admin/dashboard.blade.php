@@ -6,7 +6,7 @@
 @section('content')
 
 {{-- Stats Cards --}}
-<div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+<div class="stats-grid">
   <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); padding: 24px; display: flex; align-items: center; gap: 16px;">
     <div class="stat-icon" style="font-size: 2rem; color: var(--primary);">👗</div>
     <div>
@@ -38,7 +38,7 @@
 </div>
 
 {{-- Rental Collection Stats --}}
-<div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 24px; margin-bottom: 24px; gap: 24px;">
+<div class="stats-grid" style="margin-top: 24px; margin-bottom: 24px;">
   <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); border-top: 3px solid var(--success); padding: 24px; display: flex; align-items: center; gap: 16px;">
     <div class="stat-icon" style="font-size: 2rem; color: var(--success);">✅</div>
     <div>
@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<div style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;margin-bottom:24px;">
+<div class="admin-layout" style="margin-bottom:24px;">
 
   {{-- Orders Chart --}}
   <div class="admin-card">
@@ -111,7 +111,7 @@
   </div>
 </div>
 
-<div style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;">
+<div class="admin-layout">
 
   {{-- Recent Orders --}}
   <div class="admin-card">

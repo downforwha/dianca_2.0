@@ -42,7 +42,7 @@
 </div>
 
 {{-- Charts --}}
-<div style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-bottom:24px;">
+<div class="admin-layout" style="margin-bottom:24px;">
   <div class="admin-card">
     <div class="admin-card-header">
       <h3>📊 Grafik Pendapatan vs Pengeluaran</h3>

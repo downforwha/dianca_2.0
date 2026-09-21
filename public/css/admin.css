@@ -712,7 +712,13 @@ select.form-control {
   .keu-summary { grid-template-columns: 1fr; }
   .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
   .admin-header { padding: 0 16px; }
+  .admin-layout, .admin-layout-even { grid-template-columns: 1fr !important; gap: 24px !important; }
 }
+
+/* Custom Admin Layouts */
+.admin-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; }
+.admin-layout-even { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr; }
   .login-card { padding: 32px 24px; }

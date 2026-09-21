@@ -5,7 +5,7 @@
 
 @section('content')
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+<div class="admin-layout-even">
 
   {{-- ── INFORMASI TOKO ── --}}
   <div>

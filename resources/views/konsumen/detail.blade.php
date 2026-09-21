@@ -17,7 +17,7 @@
     <span style="color:var(--black)">{{ $product->name }}</span>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+  <div class="grid-2" style="gap:60px;align-items:start;">
     {{-- Images --}}
     <div>
       <div style="border-radius:20px;overflow:hidden;background:var(--cream);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;border:1px solid #D4AF37;box-shadow: 0 4px 20px rgba(212,175,55,0.1);">
@@ -123,7 +123,7 @@
       <form action="{{ route('kontak.store') }}" method="POST" style="max-width:600px;margin:0 auto;">
         @csrf
         <input type="hidden" name="product_id" value="{{ $product->id }}">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="grid-2" style="gap:16px;">
           <div class="form-group">
             <label class="form-label">Nama Lengkap *</label>
             <input type="text" name="customer_name" class="form-control" required placeholder="Nama Anda">
@@ -133,7 +133,7 @@
             <input type="text" name="customer_phone" class="form-control" required placeholder="08xxxxxxxxxx">
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="grid-2" style="gap:16px;">
           @if($product->sizes)
           <div class="form-group">
             <label class="form-label">Ukuran *</label>

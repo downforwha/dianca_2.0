@@ -53,7 +53,7 @@
       <div style="font-size:5rem;flex-shrink:0;">📏</div>
       <div>
         <h3 style="margin-bottom:12px;color:var(--primary-dark);">Tips Mengukur Tubuh dengan Tepat</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="grid-2" style="gap:12px;">
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <span style="color:var(--primary);font-weight:700;flex-shrink:0;">1.</span>
             <p style="font-size:0.9rem;color:var(--gray);">Ukur dengan pita ukur yang fleksibel, pastikan tidak terlalu ketat atau longgar.</p>
@@ -175,7 +175,7 @@
     {{-- Aksesoris --}}
     <div id="tab-aksesori" class="size-tab-content" style="display:none;">
       <h3 style="margin-bottom:20px;">📏 Panduan Ukuran — Aksesoris</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div class="grid-2" style="gap:24px;">
         <div style="background:var(--white);border-radius:16px;padding:28px;box-shadow:var(--shadow-sm);">
           <h4 style="margin-bottom:16px;">💍 Cincin</h4>
           <table class="size-table" style="margin-bottom:0;">
@@ -210,7 +210,7 @@
         <h2 style="color:#fff;">Cara Mengukur Tubuh</h2>
         <div class="divider-primary"></div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+      <div class="grid-3" style="gap:32px;">
         <div style="text-align:center;">
           <div style="font-size:3rem;margin-bottom:16px;">🎀</div>
           <h4 style="color:var(--primary-light);margin-bottom:10px;">Lingkar Dada</h4>
