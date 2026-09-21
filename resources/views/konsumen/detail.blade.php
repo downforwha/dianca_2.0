@@ -24,7 +24,16 @@
         @if($product->image)
           <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" style="width:100%;height:100%;object-fit:cover;" id="mainImg">
         @else
-          <div style="font-size:8rem;">{{ $product->category->icon ?? '👗' }}</div>
+          @php
+              $prodImages = [
+                  'prod_1_1789934824990.png',
+                  'prod_2_1789934839818.png',
+                  'prod_3_1789934853254.png',
+                  'prod_4_1789934870113.png'
+              ];
+              $fallbackBg = asset('assets/images/redesign/' . $prodImages[$product->id % 4]);
+          @endphp
+          <img src="{{ $fallbackBg }}" alt="{{ $product->name }}" style="width:100%;height:100%;object-fit:cover;" id="mainImg">
         @endif
       </div>
       {{-- Gallery --}}
@@ -250,7 +259,16 @@
           @if($rel->image)
             <img src="{{ asset('storage/'.$rel->image) }}" alt="{{ $rel->name }}" loading="lazy">
           @else
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--cream),var(--primary-pale));display:flex;align-items:center;justify-content:center;font-size:4rem;">👗</div>
+            @php
+                $prodImages = [
+                    'prod_1_1789934824990.png',
+                    'prod_2_1789934839818.png',
+                    'prod_3_1789934853254.png',
+                    'prod_4_1789934870113.png'
+                ];
+                $relFallbackBg = asset('assets/images/redesign/' . $prodImages[$rel->id % 4]);
+            @endphp
+            <img src="{{ $relFallbackBg }}" alt="{{ $rel->name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
           @endif
           <div class="product-card__overlay">
             <a href="{{ route('produk.detail', $rel->slug) }}" class="btn btn-white btn-sm">Lihat Detail</a>

@@ -81,7 +81,7 @@
               'prod_3_1789934853254.png',
               'prod_4_1789934870113.png'
           ];
-          $fallbackBg = isset($prodImages[$index % 4]) ? asset('assets/images/redesign/' . $prodImages[$index % 4]) : '';
+          $fallbackBg = asset('assets/images/redesign/' . $prodImages[$product->id % 4]);
       @endphp
       <div class="product-card animate-fade-up" style="border: none; background: transparent; transition: none; overflow: visible;">
         <div class="product-card__img-wrap" style="overflow: hidden; aspect-ratio: 3/4; position: relative; background: var(--cream); border: 1px solid #D4AF37; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">

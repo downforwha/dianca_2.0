@@ -13,7 +13,16 @@
         @if($product->image)
           <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" loading="lazy">
         @else
-          <img src="{{ asset('assets/images/redesign/prod_1_1789934824990.png') }}" alt="{{ $product->name }}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          @php
+              $prodImages = [
+                  'prod_1_1789934824990.png',
+                  'prod_2_1789934839818.png',
+                  'prod_3_1789934853254.png',
+                  'prod_4_1789934870113.png'
+              ];
+              $fallbackBg = asset('assets/images/redesign/' . $prodImages[$product->id % 4]);
+          @endphp
+          <img src="{{ $fallbackBg }}" alt="{{ $product->name }}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
         @endif
         @if($product->sale_price)<span class="product-card__badge sale">SALE</span>@endif
         @if($product->stock == 1 || $product->wishlists()->count() > 5)
