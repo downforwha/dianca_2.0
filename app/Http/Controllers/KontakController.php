@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 
 class KontakController extends Controller
 {
     public function store(Request $request)
     {
+        // Rate limit: max 10 orders per IP per 5 minutes
+        $key = 'order:' . $request->ip();
+        if (RateLimiter::tooManyAttempts($key, 10)) {
+            $seconds = RateLimiter::availableIn($key);
+            return back()->with('error', 'Terlalu banyak permintaan. Silakan coba lagi dalam ' . $seconds . ' detik.');
+        }
+        RateLimiter::hit($key, 300);
+
         $validated = $request->validate([
             'customer_name'    => 'required|string|max:255',
             'customer_phone'   => 'required|string|max:20',
