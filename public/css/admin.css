@@ -123,7 +123,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
   display: flex; flex-direction: column;
-  position: fixed; top: 0; left: 0; bottom: 0; z-index: 200;
+  position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000;
   border-right: 1px solid var(--sidebar-border);
   transition: transform 0.3s var(--ease);
 }
@@ -192,7 +192,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sidebar-link .icon {
   font-size: 1rem; width: 20px; flex-shrink: 0; text-align: center;
-  opacity: 0.7;
+  opacity: 0.7; pointer-events: none;
 }
 .sidebar-link.active .icon,
 .sidebar-link:hover .icon { opacity: 1; }
@@ -257,6 +257,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: sticky; top: 0; z-index: 100;
   box-shadow: var(--shadow-xs);
 }
+.admin-header-left { display: flex; align-items: center; gap: 16px; }
+.mobile-menu-btn { display: none; }
 .admin-header-left h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem; font-weight: 600; color: var(--text);
@@ -747,7 +749,7 @@ select.form-control {
 
 .sidebar-overlay {
   position: fixed; inset: 0; background: rgba(12,10,9,0.45);
-  z-index: 199; display: none; backdrop-filter: blur(2px);
+  z-index: 999; display: none; backdrop-filter: blur(2px);
   opacity: 0; transition: opacity 0.3s ease;
 }
 .sidebar-overlay.open {
