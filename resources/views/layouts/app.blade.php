@@ -163,6 +163,7 @@
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
   // ── Navbar scroll effect ──
   const navbar = document.getElementById('navbar');
   function updateNavbar() {
@@ -236,7 +237,7 @@
   });
 
   // ── Wishlist Logic ──
-  function toggleWishlist(productId, btnElement) {
+  window.toggleWishlist = function(productId, btnElement) {
     fetch(`/wishlist/toggle/${productId}`, {
       method: 'POST',
       headers: {
@@ -257,7 +258,8 @@
     .catch(() => {
       Toast.fire({ icon: 'error', title: 'Terjadi kesalahan' });
     });
-  }
+  };
+});
 </script>
 
 <!-- Google Translate Widget -->
