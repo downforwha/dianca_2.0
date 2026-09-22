@@ -25,7 +25,7 @@
         Eksplorasi mahakarya eksklusif untuk wanita modern. Tersedia opsi sewa dan pengerjaan kustom.
       </p>
       <div class="hero-actions" style="display: flex; gap: 16px; justify-content: center;">
-        <a href="{{ route('koleksi') }}" class="btn" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; font-weight: 600; padding: 16px 36px; transition: transform 0.3s ease; box-shadow: 0 8px 25px rgba(212,175,55,0.2);">Eksplorasi Koleksi</a>
+        <a href="{{ route('koleksi') }}" class="btn btn-lg" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; font-weight: 600; transition: transform 0.3s ease; box-shadow: 0 8px 25px rgba(212,175,55,0.2);">Eksplorasi Koleksi</a>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
       <h2 style="font-size: 2.25rem; font-weight: 400; letter-spacing: -0.01em;">Kategori Pilihan</h2>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; grid-auto-rows: 280px;">
+    <div class="bento-grid">
       @foreach($categories as $index => $cat)
       @php
         $spanClass = ($index == 0) ? 'grid-column: span 2; grid-row: span 2;' : (($index == 1) ? 'grid-column: span 2;' : 'grid-column: span 1;');
@@ -50,7 +50,7 @@
         ];
         $bg = isset($bgImages[$index]) ? asset('assets/images/redesign/' . $bgImages[$index]) : asset('assets/images/redesign/cat_dress_1789934758453.png');
       @endphp
-      <a href="{{ route('koleksi') }}?kategori={{ $cat->slug }}" class="category-card animate-fade-up" style="{{ $spanClass }} background: url('{{ $bg }}') center/cover no-repeat; padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; border: 1px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
+      <a href="{{ route('koleksi') }}?kategori={{ $cat->slug }}" class="category-card animate-fade-up bento-item" style="{{ $spanClass }} background: url('{{ $bg }}') center/cover no-repeat; padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; border: 1px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3)); z-index: 1;"></div>
         <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
           <div class="name" style="font-size: 2.25rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; color: #9c7717; margin-bottom: 4px; text-shadow: 1px 1px 0px rgba(255,255,255,0.8);">{{ $cat->name }}</div>
@@ -65,14 +65,14 @@
 {{-- ── FEATURED PRODUCTS ── --}}
 <section class="section" style="padding: 120px 0; background: var(--white); border-top: 1px solid var(--gray-light);">
   <div class="container">
-    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px;">
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 80px;">
       <div>
-        <h2 style="font-size: 2.25rem; font-weight: 400; letter-spacing: -0.01em;">Signature Pieces</h2>
+        <h2 style="font-size: 2.25rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0;">Signature Pieces</h2>
       </div>
-      <a href="{{ route('koleksi') }}" class="btn" style="background: transparent; color: var(--primary); border: 1px solid var(--gray-light); padding: 12px 24px;">Lihat Semua</a>
+      <a href="{{ route('koleksi') }}" class="btn" style="background: transparent; color: var(--primary); border: 1px solid var(--gray-light);">Lihat Semua</a>
     </div>
 
-    <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 32px;">
+    <div class="grid-4" style="gap: 40px 32px;">
       @forelse($featured as $index => $product)
       @php
           $prodImages = [
@@ -81,7 +81,7 @@
               'prod_3_1789934853254.png',
               'prod_4_1789934870113.png'
           ];
-          $fallbackBg = isset($prodImages[$index % 4]) ? asset('assets/images/redesign/' . $prodImages[$index % 4]) : '';
+          $fallbackBg = asset('assets/images/redesign/' . $prodImages[$product->id % 4]);
       @endphp
       <div class="product-card animate-fade-up" style="border: none; background: transparent; transition: none; overflow: visible;">
         <div class="product-card__img-wrap" style="overflow: hidden; aspect-ratio: 3/4; position: relative; background: var(--cream); border: 1px solid #D4AF37; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
@@ -92,7 +92,7 @@
           @endif
           
           <div class="product-card__overlay" style="position: absolute; inset: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease;">
-            <a href="{{ route('produk.detail', $product->slug) }}" class="btn" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; padding: 14px 28px; transform: translateY(10px); transition: transform 0.4s ease; font-weight: 600; box-shadow: 0 4px 15px rgba(212,175,55,0.2);">Lihat Detail</a>
+            <a href="{{ route('produk.detail', $product->slug) }}" class="btn" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; transform: translateY(10px); transition: transform 0.4s ease; font-weight: 600; box-shadow: 0 4px 15px rgba(212,175,55,0.2);">Lihat Detail</a>
           </div>
           
           {{-- Status Badge (Clean Minimal) --}}
@@ -129,7 +129,7 @@
   <div class="container">
     <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 24px; font-weight: 600; color: var(--primary);">Elevate Your Style</h2>
     <p style="color: var(--gray); max-width: 500px; margin: 0 auto 48px; font-size: 1.125rem; line-height: 1.7;">Konsultasikan desain, gaya, dan ukuran bersama fashion stylist kami.</p>
-    <a href="https://wa.me/{{ \App\Models\Setting::get('butik_wa','6281234567890') }}" target="_blank" class="btn" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; padding: 18px 40px; font-weight: 600; box-shadow: 0 8px 25px rgba(212,175,55,0.2);">
+    <a href="https://wa.me/{{ \App\Models\Setting::get('butik_wa','6281234567890') }}" target="_blank" class="btn btn-lg" style="background: var(--white); color: #b8932c; border: 1px solid #D4AF37; font-weight: 600; box-shadow: 0 8px 25px rgba(212,175,55,0.2);">
       Hubungi via WhatsApp
     </a>
   </div>
