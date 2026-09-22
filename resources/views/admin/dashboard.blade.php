@@ -6,29 +6,29 @@
 @section('content')
 
 {{-- Stats Cards --}}
-<div class="stats-grid">
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); padding: 24px; display: flex; align-items: center; gap: 16px;">
+<div class="stats-grid animate-fade-up">
+  <div class="stat-card">
     <div class="stat-icon" style="font-size: 2rem; color: var(--primary);">👗</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $totalProducts }}</div>
       <div class="stat-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Total Produk</div>
     </div>
   </div>
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); padding: 24px; display: flex; align-items: center; gap: 16px;">
+  <div class="stat-card">
     <div class="stat-icon" style="font-size: 2rem; color: var(--primary);">📋</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $totalOrders }}</div>
       <div class="stat-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Total Pesanan</div>
     </div>
   </div>
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); padding: 24px; display: flex; align-items: center; gap: 16px;">
+  <div class="stat-card">
     <div class="stat-icon" style="font-size: 2rem; color: var(--primary);">🔔</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $pendingOrders }}</div>
       <div class="stat-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Pesanan Pending</div>
     </div>
   </div>
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); padding: 24px; display: flex; align-items: center; gap: 16px;">
+  <div class="stat-card">
     <div class="stat-icon" style="font-size: 2rem; color: var(--primary);">💰</div>
     <div>
       <div class="stat-value" style="font-size: 1.25rem; font-weight: 600; color: var(--success);">Rp {{ number_format($revenueThisMonth, 0, ',', '.') }}</div>
@@ -38,22 +38,22 @@
 </div>
 
 {{-- Rental Collection Stats --}}
-<div class="stats-grid" style="margin-top: 24px; margin-bottom: 24px;">
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); border-top: 3px solid var(--success); padding: 24px; display: flex; align-items: center; gap: 16px;">
+<div class="stats-grid animate-fade-up delay-50" style="margin-top: 24px; margin-bottom: 24px;">
+  <div class="stat-card green">
     <div class="stat-icon" style="font-size: 2rem; color: var(--success);">✅</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $readyCount }}</div>
       <div class="stat-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Koleksi Ready</div>
     </div>
   </div>
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); border-top: 3px solid var(--warning); padding: 24px; display: flex; align-items: center; gap: 16px;">
+  <div class="stat-card amber">
     <div class="stat-icon" style="font-size: 2rem; color: var(--warning);">👗</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $rentCount }}</div>
       <div class="stat-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Sedang Disewa</div>
     </div>
   </div>
-  <div class="stat-card" style="background: var(--white); border: 1px solid var(--gray-light); border-top: 3px solid var(--info); padding: 24px; display: flex; align-items: center; gap: 16px;">
+  <div class="stat-card blue">
     <div class="stat-icon" style="font-size: 2rem; color: var(--info);">⏳</div>
     <div>
       <div class="stat-value" style="font-size: 1.5rem; font-weight: 600; color: var(--text-main);">{{ $onProcessCount }}</div>
@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<div class="admin-layout" style="margin-bottom:24px;">
+<div class="admin-layout animate-fade-up delay-100" style="margin-bottom:24px;">
 
   {{-- Orders Chart --}}
   <div class="admin-card">
@@ -111,7 +111,7 @@
   </div>
 </div>
 
-<div class="admin-layout">
+<div class="admin-layout animate-fade-up delay-150">
 
   {{-- Recent Orders --}}
   <div class="admin-card">

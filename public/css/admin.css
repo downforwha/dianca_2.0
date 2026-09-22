@@ -9,11 +9,12 @@
 
 /* ── CSS Variables ──────────────────────────────── */
 :root {
-  /* Core — Gray & White Admin Theme */
-  --primary:        #1C1917; /* stone-900 */
-  --primary-dark:   #0C0A09;
-  --primary-light:  #44403C;
-  --primary-pale:   #F5F5F4;
+  /* Core — Boutique Luxury Theme */
+  --primary:        #C9956C; /* Gold/Bronze */
+  --primary-dark:   #B07F58;
+  --primary-light:  #E2B694;
+  --primary-pale:   #F9F1EB;
+
 
   /* ── Chrome Tokens — MUST match style.css chrome tokens ── */
   /* Sidebar, admin header accents share the same chrome palette  */
@@ -35,10 +36,10 @@
   --header-h:       64px;
 
   /* Surfaces */
-  --body-bg:        #F5F5F4; /* stone-100 — page background */
+  --body-bg:        #FAFAF9; /* stone-50 — softer page background */
   --surface:        #FFFFFF; /* card/panel background */
   --surface-raised: #FFFFFF;
-  --surface-hover:  #FAFAF9;
+  --surface-hover:  #F5F5F4;
   --border:         #E7E5E4; /* stone-200 */
   --border-mid:     #D6D3D1; /* stone-300 */
 
@@ -62,18 +63,18 @@
   --info-bg:        #EFF6FF;
   --info-border:    #BFDBFE;
 
-  /* Shadows */
-  --shadow-xs:   0 1px 2px rgba(28,25,23,0.04);
-  --shadow-sm:   0 2px 6px rgba(28,25,23,0.06);
-  --shadow:      0 4px 12px rgba(28,25,23,0.08);
-  --shadow-md:   0 8px 24px rgba(28,25,23,0.10);
+  /* Shadows - Liquid Glass / Softer */
+  --shadow-xs:   0 2px 4px rgba(28,25,23,0.03), 0 1px 2px rgba(28,25,23,0.04);
+  --shadow-sm:   0 4px 12px rgba(28,25,23,0.04), 0 1px 3px rgba(28,25,23,0.03);
+  --shadow:      0 8px 24px rgba(28,25,23,0.06), 0 2px 8px rgba(28,25,23,0.04);
+  --shadow-md:   0 16px 48px rgba(28,25,23,0.08), 0 4px 16px rgba(28,25,23,0.05);
 
-  /* Shape */
-  --radius-sm:   4px;
-  --radius:      8px;
-  --radius-md:   10px;
-  --radius-lg:   14px;
-  --radius-xl:   20px;
+  /* Shape - Rounder for elegance */
+  --radius-sm:   6px;
+  --radius:      10px;
+  --radius-md:   14px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
   --radius-full: 9999px;
 
   /* Motion */
@@ -82,7 +83,7 @@
   --transition-fast: all 0.15s var(--ease);
 
   /* Sidebar accent (for active items) */
-  --sidebar-accent: rgba(255,255,255,0.15);
+  --sidebar-accent: rgba(201,149,108,0.15); /* Gold tint */
 
   /* ── Backward-compat aliases (for existing view files) ── */
   --text-main:    var(--text);
@@ -257,8 +258,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-xs);
 }
 .admin-header-left h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem; font-weight: 700; color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600; color: var(--text);
   letter-spacing: -0.01em;
 }
 .admin-header-left p { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
@@ -300,8 +301,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── Page Title ─────────────────────────────────── */
 .page-title { margin-bottom: 20px; }
 .page-title h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.35rem; color: var(--text); font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; color: var(--text); font-weight: 600;
   letter-spacing: -0.02em;
 }
 .page-title p { color: var(--text-muted); font-size: 0.82rem; margin-top: 3px; }
@@ -353,7 +354,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--surface);
 }
 .admin-card-header h3 {
-  font-size: 0.9rem; font-weight: 700; font-family: 'Inter', sans-serif;
+  font-size: 1.1rem; font-weight: 600; font-family: 'Cormorant Garamond', serif;
   color: var(--text); letter-spacing: -0.01em;
 }
 .admin-card-body { padding: 20px; }
@@ -527,8 +528,8 @@ select.form-control {
   position: sticky; top: 0; background: var(--surface); z-index: 1;
 }
 .modal-header h3 {
-  font-size: 1rem; font-weight: 700; color: var(--text);
-  font-family: 'Inter', sans-serif; letter-spacing: -0.01em;
+  font-size: 1.25rem; font-weight: 600; color: var(--text);
+  font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em;
 }
 .modal-close { font-size: 1.1rem; color: var(--text-muted); transition: var(--transition); }
 .modal-close:hover { color: var(--danger); }
@@ -704,11 +705,20 @@ select.form-control {
 .action-group { display: flex; gap: 4px; align-items: center; }
 
 /* ── Animations ─────────────────────────────────── */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+@keyframes fadeUpStagger {
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.admin-content { animation: fadeIn 0.2s ease; }
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUpStagger 0.4s var(--ease) forwards;
+}
+.delay-50  { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.admin-content { animation: fadeUpStagger 0.4s var(--ease) forwards; }
 
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 1280px) {
