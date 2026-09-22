@@ -18,6 +18,7 @@
   <!-- ══════════════════════════════════════════════════
        SIDEBAR — Dark zinc, professional
   ════════════════════════════════════════════════════ -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
   <aside class="sidebar" id="sidebar">
 
     <!-- Sidebar Header / Brand -->
@@ -99,8 +100,13 @@
     <!-- Top Header -->
     <header class="admin-header">
       <div class="admin-header-left">
-        <h1>@yield('page_title','Dashboard')</h1>
-        <p>@yield('page_subtitle', date('l, d F Y'))</p>
+        <button class="header-btn mobile-menu-btn" onclick="toggleSidebar()" aria-label="Buka Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="header-titles">
+          <h1>@yield('page_title','Dashboard')</h1>
+          <p>@yield('page_subtitle', date('l, d F Y'))</p>
+        </div>
       </div>
       <div class="admin-header-right">
         <!-- Notification -->
@@ -194,6 +200,7 @@
   // ── Sidebar mobile toggle ──
   function toggleSidebar() {
     document.getElementById('sidebar')?.classList.toggle('open');
+    document.getElementById('sidebar-overlay')?.classList.toggle('open');
   }
 </script>
 @stack('scripts')

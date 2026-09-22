@@ -45,7 +45,7 @@
   /* Text */
   --text:           #1C1917;
   --text-secondary: #44403C;
-  --text-muted:     #78716C;
+  --text-muted:     #57534E; /* Improved contrast, was #78716C */
   --text-disabled:  #A8A29E;
 
   /* Status */
@@ -170,14 +170,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .sidebar-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 9px 10px; border-radius: var(--radius);
+  padding: 12px 10px; border-radius: var(--radius);
   color: var(--sidebar-text); font-size: 0.85rem; font-weight: 500;
   transition: var(--transition);
   margin-bottom: 2px; cursor: pointer;
+  min-height: 44px; /* Touch target minimum */
 }
 .sidebar-link:hover {
   color: #FFFFFF;
   background: var(--sidebar-hover);
+}
+.sidebar-link:active {
+  transform: scale(0.98);
+  background: var(--sidebar-active);
 }
 .sidebar-link.active {
   color: #FFFFFF;
@@ -259,7 +264,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .admin-header-left p { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
 .admin-header-right { display: flex; align-items: center; gap: 10px; }
 .header-btn {
-  width: 36px; height: 36px; border-radius: var(--radius);
+  width: 44px; height: 44px; border-radius: var(--radius);
   background: var(--body-bg);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.95rem; color: var(--text-muted); transition: var(--transition);
@@ -272,9 +277,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .header-notification { position: relative; }
 .notif-dot {
-  position: absolute; top: 5px; right: 5px;
+  position: absolute; top: 10px; right: 10px;
   width: 7px; height: 7px; border-radius: var(--radius-full);
   background: var(--danger); border: 1.5px solid var(--surface);
+}
+
+.mobile-menu-btn {
+  display: none;
+  margin-right: 12px;
+}
+.header-titles {
+  display: flex;
+  flex-direction: column;
+}
+.admin-header-left {
+  display: flex; align-items: center;
 }
 
 /* ── Admin Content ──────────────────────────────── */
@@ -602,12 +619,12 @@ select.form-control {
 }
 .toggle-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
 .toggle-slider {
-  width: 40px; height: 22px; background: var(--border-mid);
+  width: 44px; height: 26px; background: var(--border-mid);
   border-radius: var(--radius-full); transition: var(--transition); position: relative;
 }
 .toggle-slider::before {
   content: ''; position: absolute; left: 3px; top: 3px;
-  width: 16px; height: 16px; border-radius: var(--radius-full);
+  width: 20px; height: 20px; border-radius: var(--radius-full);
   background: #FFFFFF; transition: var(--transition);
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
@@ -715,6 +732,16 @@ select.form-control {
   .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
   .admin-header { padding: 0 16px; }
   .admin-layout, .admin-layout-even { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .mobile-menu-btn { display: flex; }
+}
+
+.sidebar-overlay {
+  position: fixed; inset: 0; background: rgba(12,10,9,0.45);
+  z-index: 199; display: none; backdrop-filter: blur(2px);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.sidebar-overlay.open {
+  display: block; opacity: 1;
 }
 
 /* Custom Admin Layouts */
