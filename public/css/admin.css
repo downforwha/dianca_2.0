@@ -112,7 +112,7 @@ img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
 /* ── Admin Layout ───────────────────────────────── */
-.admin-layout { display: flex; min-height: 100vh; }
+.admin-wrapper { display: flex; min-height: 100vh; }
 
 /* ══════════════════════════════════════════════════
    SIDEBAR — Dark zinc, clean & professional

@@ -13,7 +13,7 @@
   @stack('styles')
 </head>
 <body>
-<div class="admin-layout">
+<div class="admin-wrapper">
 
   <!-- ══════════════════════════════════════════════════
        SIDEBAR — Dark zinc, professional
