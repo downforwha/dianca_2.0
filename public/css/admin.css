@@ -96,24 +96,26 @@
   --card-bg:      var(--surface);
   --hover-bg:     var(--surface-hover);
   --border-color: var(--border);
+  --bg-color:     var(--body-bg);
 }
 
 /* ── Reset ──────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 15px; -webkit-font-smoothing: antialiased; }
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--body-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
   color: var(--text);
-  min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
 /* ── Admin Layout ───────────────────────────────── */
-.admin-wrapper { display: flex; min-height: 100vh; }
+.admin-wrapper { display: flex; min-height: 100vh; overflow-x: hidden; width: 100%; }
 
 /* ══════════════════════════════════════════════════
    SIDEBAR — Dark zinc, clean & professional
@@ -258,7 +260,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-xs);
 }
 .admin-header-left { display: flex; align-items: center; gap: 16px; }
-.mobile-menu-btn { display: none; }
+.mobile-menu-btn { display: none !important; }
 .admin-header-left h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem; font-weight: 600; color: var(--text);
@@ -543,7 +545,7 @@ select.form-control {
 }
 
 /* ── Chart Container ────────────────────────────── */
-.chart-container { position: relative; height: 260px; }
+.chart-container { position: relative; height: 260px; width: 100%; }
 
 /* ── Image Upload ───────────────────────────────── */
 .upload-area {
@@ -744,7 +746,7 @@ select.form-control {
   .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
   .admin-header { padding: 0 16px; }
   .admin-layout, .admin-layout-even { grid-template-columns: 1fr !important; gap: 24px !important; }
-  .mobile-menu-btn { display: flex; }
+  .mobile-menu-btn { display: flex !important; }
 }
 
 .sidebar-overlay {
